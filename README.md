@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio Page
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This is a personal portfolio page built with React and TypeScript.
+It utilizes a variety of modern web technologies including Tailwind, Vite, Redux, Radix UI, Shadcn UI and Framer Motion.
+
+## Prerequisites
+
+- [Bun](https://bun.sh/)
+
+## Installation
+
+### Installing Bun
+
+If you haven't installed Bun yet, you can install it using the following command:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
+```
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/ForAeons/ForAeons.github.io.git
+cd ForAeons.github.io
+```
+
+### Install Packages
+
+To install the required packages, run:
+
+```bash
+bun install
+```
+
+## Running the Development Server
+
+To start the development server, run:
+
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the development server, and you can access the application at `http://localhost:5173`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploying to Github Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Push to master branch will automatically trigger deployment to github pages
 
-## Learn More
+## Built With
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Nextjs](https://nextjs.org/) - The web framework used
+- [TypeScript](https://www.typescriptlang.org/) - For adding static types to JavaScript
+- [Tailwind](https://tailwindcss.com/) - A utility-first CSS framework
+- [Shadcn UI](https://ui.shadcn.com/) - A collection of UI components
+- [Framer Motion](https://www.framer.com/motion/) - For animations
+- [Devicon](https://devicon.dev/) - Icons for developer tools
+- [Flaticon](https://www.flaticon.com/free-icons/software-development) - Icon for web page
