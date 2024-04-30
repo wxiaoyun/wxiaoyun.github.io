@@ -20,12 +20,7 @@ jobs:
         uses: oven-sh/setup-bun@v1
 
       - name: Run ESLint
-        run: |
-          bunx --bun eslint . \
-          --config .eslintrc.cjs \
-          --ext .js,.jsx,.ts,.tsx \
-          --format @microsoft/eslint-formatter-sarif \
-          --output-file eslint-results.sarif
+        run: bun run lint
 
   tests:
     name: Build and test
