@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
     <header className="w-full flex flex-col sm:flex-row gap-6 justify-between items-center">
       <nav className="w-fit flex gap-2 lg:gap-6 bg-neutral-50 rounded-full items-center p-2 shadow-sm hover:shadow-md transition-shadow">
         {navItems.map(({ title, href }) => (
-          <NavItem key={href} title={title} href={href} />
+          <NavItem key={href} title={title} href={href} prefetch={true} />
         ))}
       </nav>
 

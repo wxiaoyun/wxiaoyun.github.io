@@ -1,4 +1,6 @@
 import { TextGenerateEffect } from "@/components/aceternity/text-generate-effect";
+import { SkillGrid } from "@/components/skills";
+import { Separator } from "@/components/ui/separator";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +13,7 @@ const intro =
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-6 py-6">
+    <main className="flex flex-col gap-12 py-6">
       <section>
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
           About me
@@ -20,6 +22,13 @@ export default function Home() {
           words={intro}
           className="scroll-m-20 text-xl font-semibold tracking-tight"
         />
+      </section>
+      <Separator />
+      <section className="w-full">
+        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+          Technologies I use
+        </h3>
+        <SkillGrid className="mx-auto mt-6" />
       </section>
     </main>
   );
