@@ -1,6 +1,6 @@
 import React from "react";
 import { SiBun, SiNextdotjs, SiShadcnui } from "react-icons/si";
-import { FaChevronRight } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa6";
 import { LinkIcon } from "../common/link-icon";
 
 const year = new Date().getFullYear();
@@ -18,7 +18,7 @@ const techStack = [
   {
     label: "Aceternity UI",
     href: "https://ui.aceternity.com/",
-    icon: FaChevronRight,
+    icon: FaAngleRight,
   },
   {
     label: "Bun",
@@ -29,7 +29,7 @@ const techStack = [
 
 export const Footer: React.FC = () => {
   return (
-    <div className="w-full flex justify-between items-center">
+    <footer className="w-full flex justify-between items-center">
       <span className="text-sm text-muted-foreground">
         {`Copyright (c) ${year} Wu Xiaoyun`}
       </span>
@@ -46,6 +46,6 @@ export const Footer: React.FC = () => {
           />
         ))}
       </div>
-    </div>
+    </footer>
   );
 };

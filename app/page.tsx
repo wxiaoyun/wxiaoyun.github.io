@@ -12,7 +12,7 @@ const intro =
 export default function Home() {
   return (
     <main className="flex flex-col gap-6 py-6">
-      <div>
+      <section>
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
           About me
         </h3>
@@ -20,7 +20,7 @@ export default function Home() {
           words={intro}
           className="scroll-m-20 text-xl font-semibold tracking-tight"
         />
-      </div>
+      </section>
     </main>
   );
 }
