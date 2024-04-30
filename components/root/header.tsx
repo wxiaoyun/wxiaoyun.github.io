@@ -2,7 +2,7 @@ import React from "react";
 import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
-import { LinkIcon } from "../common/link-icon";
+import { LinkIcon } from "../common";
 import { NavItem } from "./nav-item";
 
 const navItems = [

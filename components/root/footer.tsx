@@ -1,7 +1,7 @@
 import React from "react";
 import { SiBun, SiNextdotjs, SiShadcnui } from "react-icons/si";
 import { FaAngleRight } from "react-icons/fa6";
-import { LinkIcon } from "../common/link-icon";
+import { LinkIcon } from "../common";
 
 const year = new Date().getFullYear();
 const techStack = [
@@ -29,13 +29,13 @@ const techStack = [
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full flex justify-between items-center">
-      <span className="text-sm text-muted-foreground">
-        {`Copyright (c) ${year} Wu Xiaoyun`}
-      </span>
+    <footer className="w-full flex flex-col items-center gap-3">
+      <small className="text-xs text-muted-foreground">
+        {`Copyright (c) ${year} Wu Xiaoyun. All rights reserved.`}
+      </small>
 
-      <div className="text-sm  text-muted-foreground flex gap-2">
-        <span>Made with</span>
+      <div className="text-sm text-muted-foreground flex gap-2">
+        <span>About this website: built with</span>
         {techStack.map(({ href, icon, label }) => (
           <LinkIcon
             key={href}
