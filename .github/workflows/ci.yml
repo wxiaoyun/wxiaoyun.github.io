@@ -19,11 +19,14 @@ jobs:
       - name: Install bun
         uses: oven-sh/setup-bun@v1
 
+      - name: Install dependencies
+        run: bun install
+
       - name: Run ESLint
         run: bun run lint
 
   tests:
-    name: Build and test
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
@@ -37,9 +40,6 @@ jobs:
 
       - name: Install dependencies
         run: bun install
-
-      - name: Generate package
-        run: bun run build
 
       - name: Tests
         run: bun test

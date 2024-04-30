@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && next-export-optimize-images",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.0.2",
@@ -22,6 +23,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.0.2",
     "framer-motion": "^11.1.7",
+    "husky": "^9.0.11",
     "lucide-react": "^0.376.0",
     "next": "14.2.3",
     "next-export-optimize-images": "^4.3.1",
