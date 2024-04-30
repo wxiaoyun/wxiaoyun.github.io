@@ -20,7 +20,7 @@ export default function Home() {
         </h3>
         <TextGenerateEffect
           words={intro}
-          className="scroll-m-20 text-xl font-semibold tracking-tight"
+          className="scroll-m-20 text-lg font-semibold tracking-tight"
         />
       </section>
       <Separator />
