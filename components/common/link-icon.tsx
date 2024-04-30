@@ -1,20 +1,22 @@
 import { cn } from "@/lib/utils";
 
 type LinkIconProps = {
+  label?: string;
   href: string;
   icon: React.FC<Props>;
 } & Props;
 
 export const LinkIcon: React.FC<LinkIconProps> = ({
   className,
+  label,
   href,
   icon: Icon,
 }) => {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a aria-label={label} href={href} target="_blank" rel="noopener noreferrer">
       <Icon
         className={cn(
-          "h-6 w-6 opacity-60 hover:opacity-40 transition-opacity",
+          "h-6 w-6 opacity-40 hover:opacity-80 transition-opacity",
           className,
         )}
       />
