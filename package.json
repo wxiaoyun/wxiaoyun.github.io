@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-export-optimize-images",
     "start": "next start",
     "lint": "next lint"
   },
@@ -24,6 +24,7 @@
     "framer-motion": "^11.1.7",
     "lucide-react": "^0.376.0",
     "next": "14.2.3",
+    "next-export-optimize-images": "^4.3.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.1.0",
