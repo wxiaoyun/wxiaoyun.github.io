@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
 import { BlogPost } from "./blog-post";
+import { fetchMediumData } from "./helper";
 
 export const metadata: Metadata = {
   title: "Wu Xiaoyun - Blog",
   description: "Wu Xiaoyun's blog posts",
-};
-
-const MEDIUM_FEED_URL =
-  "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@w.xy020203";
-
-export const fetchMediumData = async () => {
-  const res = await fetch(MEDIUM_FEED_URL);
-  const data = await res.json();
-  return data as MediumData;
 };
 
 export default async function Page() {
