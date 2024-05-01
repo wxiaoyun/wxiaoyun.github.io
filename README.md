@@ -2,8 +2,8 @@
 
 ## Overview
 
-This is a personal portfolio page built with React and TypeScript.
-It utilizes a variety of modern web technologies including Tailwind, Vite, Redux, Radix UI, Shadcn UI and Framer Motion.
+This is a personal portfolio page built with Nextjs and TypeScript.
+It utilizes a variety of modern web technologies including Framer Motion, Shadcn UI and Aceternity UI.
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ To start the development server, run:
 bun dev
 ```
 
-This will start the development server, and you can access the application at `http://localhost:5173`.
+This will start the development server, and you can access the application at `http://localhost:300`.
 
 ## Deploying to Github Pages
 
@@ -54,6 +54,5 @@ This will start the development server, and you can access the application at `h
 - [TypeScript](https://www.typescriptlang.org/) - For adding static types to JavaScript
 - [Tailwind](https://tailwindcss.com/) - A utility-first CSS framework
 - [Shadcn UI](https://ui.shadcn.com/) - A collection of UI components
+- [Aceternity UI](https://ui.aceternity.com/) - A collection of cool animated UI components
 - [Framer Motion](https://www.framer.com/motion/) - For animations
-- [Devicon](https://devicon.dev/) - Icons for developer tools
-- [Flaticon](https://www.flaticon.com/free-icons/software-development) - Icon for web page
