@@ -29,7 +29,6 @@ export const NavItem: React.FC<NavItemProps> = ({
   return (
     <Link
       href={href}
-      passHref
       replace={replace}
       scroll={scroll}
       prefetch={prefetch}
