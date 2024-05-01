@@ -12,7 +12,6 @@ export const projects: BentoGridProps[] = [
       <Image
         src="/RustScript.png"
         alt="Rustscript logo"
-        placeholder="blur"
         width={96}
         height={96}
         className="m-auto group-hover/bento:rotate-3 transition-all rounded-md"
