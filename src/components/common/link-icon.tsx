@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 type LinkIconProps = {
@@ -13,13 +14,18 @@ export const LinkIcon: React.FC<LinkIconProps> = ({
   icon: Icon,
 }) => {
   return (
-    <a aria-label={label} href={href} target="_blank" rel="noopener noreferrer">
+    <Link
+      aria-label={label}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Icon
         className={cn(
           "h-6 w-6 opacity-40 hover:opacity-80 transition-opacity",
           className,
         )}
       />
-    </a>
+    </Link>
   );
 };

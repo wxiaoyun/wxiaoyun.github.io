@@ -19,7 +19,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ item, className }) => {
   return (
     <article className={cn("flex flex-col", className)}>
       <div className="flex justify-between">
-        <Link href={"/blog/" + item.guid.split("/").pop()}>
+        <Link href={item.guid} target="_blank" rel="noopener noreferrer">
           <h4 className="scroll-m-20 text-md font-semibold tracking-tight">
             {item.title}
           </h4>
