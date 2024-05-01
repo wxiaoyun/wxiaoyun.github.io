@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-type NavItemProps = {
+export type NavItemProps = {
   title: string;
   href: string;
   replace?: boolean;

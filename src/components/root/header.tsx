@@ -1,11 +1,11 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa6";
 
-import { LinkIcon } from "../common";
-import { NavItem } from "./nav-item";
+import { LinkIcon, LinkIconProps } from "../common";
+import { NavItem, NavItemProps } from "./nav-item";
 
-const navItems = [
+const navItemProps: NavItemProps[] = [
   {
     title: "Home",
     href: "/",
@@ -24,25 +24,33 @@ const navItems = [
   },
 ];
 
-const socials = [
+const socialLinkProps: LinkIconProps[] = [
   {
     label: "GitHub",
-    icon: FaGithub,
+    icon: (
+      <FaGithub className="h-6 w-6 opacity-40 hover:opacity-80 transition-opacity" />
+    ),
     href: "https://github.com/ForAeons",
   },
   {
     label: "LinkedIn",
-    icon: FaLinkedin,
+    icon: (
+      <FaLinkedin className="h-6 w-6 opacity-40 hover:opacity-80 transition-opacity" />
+    ),
     href: "https://www.linkedin.com/in/w-xiaoyun/",
   },
   {
     label: "Medium",
-    icon: FaMedium,
+    icon: (
+      <FaMedium className="h-6 w-6 opacity-40 hover:opacity-80 transition-opacity" />
+    ),
     href: "https://medium.com/@w.xy020203",
   },
   {
     label: "Email",
-    icon: MdEmail,
+    icon: (
+      <MdEmail className="h-6 w-6 opacity-40 hover:opacity-80 transition-opacity" />
+    ),
     href: "mailto:me@wxiaoyun.com",
   },
 ];
@@ -51,14 +59,14 @@ export const Header: React.FC = () => {
   return (
     <header className="w-full flex flex-col sm:flex-row gap-6 justify-between items-center">
       <nav className="w-fit flex gap-2 lg:gap-6 bg-neutral-50 rounded-full items-center p-2 shadow-sm hover:shadow-md transition-shadow">
-        {navItems.map(({ title, href }) => (
-          <NavItem key={href} title={title} href={href} prefetch={true} />
+        {navItemProps.map((props) => (
+          <NavItem key={props.href} {...props} />
         ))}
       </nav>
 
       <div className="flex gap-6">
-        {socials.map(({ icon: Icon, href, label }) => (
-          <LinkIcon key={href} href={href} icon={Icon} label={label} />
+        {socialLinkProps.map((props) => (
+          <LinkIcon key={props.href} {...props} />
         ))}
       </div>
     </header>

@@ -8,22 +8,22 @@ const techStack = [
   {
     label: "Next.js",
     href: "https://nextjs.org/",
-    icon: SiNextdotjs,
+    icon: <SiNextdotjs className="inline w-4 h-4" />,
   },
   {
     label: "Shadcn UI",
     href: "https://ui.shadcn.com/",
-    icon: SiShadcnui,
+    icon: <SiShadcnui className="inline w-4 h-4" />,
   },
   {
     label: "Aceternity UI",
     href: "https://ui.aceternity.com/",
-    icon: FaAngleRight,
+    icon: <FaAngleRight className="inline w-4 h-4" />,
   },
   {
     label: "Bun",
     href: "https://bun.sh/",
-    icon: SiBun,
+    icon: <SiBun className="inline w-4 h-4" />,
   },
 ];
 
@@ -36,14 +36,8 @@ export const Footer: React.FC = () => {
 
       <div className="text-sm text-muted-foreground flex gap-2">
         <span>About this website: built with</span>
-        {techStack.map(({ href, icon, label }) => (
-          <LinkIcon
-            key={href}
-            href={href}
-            label={label}
-            icon={icon}
-            className="inline w-4 h-4"
-          />
+        {techStack.map((props) => (
+          <LinkIcon key={props.href} {...props} />
         ))}
       </div>
     </footer>
