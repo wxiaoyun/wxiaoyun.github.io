@@ -1,11 +1,13 @@
-import { BentoGridProps } from "@/components/aceternity/bento-grid";
-import { CvwoLogo } from "@/components/common";
 import Link from "next/link";
 import { TbExternalLink } from "react-icons/tb";
+import { BentoGridProps } from "@/components/aceternity/bento-grid";
+import { CvwoLogo } from "@/components/common";
 
 export const professionalExperiences: BentoGridProps[] = [
   {
-    header: <CvwoLogo />,
+    header: (
+      <CvwoLogo className="group-hover/bento:scale-105 transition-transform" />
+    ),
     title: "Software Engineer @ Computing for Voluntary Welfare Organisations",
     icon: (
       <Link

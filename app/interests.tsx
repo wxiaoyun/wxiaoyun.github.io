@@ -1,6 +1,6 @@
-import { MdOutlineGolfCourse, MdLocalMovies } from "react-icons/md";
-import { FaPersonRunning } from "react-icons/fa6";
 import { CgGym } from "react-icons/cg";
+import { FaPersonRunning } from "react-icons/fa6";
+import { MdOutlineGolfCourse, MdLocalMovies } from "react-icons/md";
 import { BentoGridProps } from "@/components/aceternity/bento-grid";
 
 export const interests: BentoGridProps[] = [
