@@ -1,16 +1,17 @@
-import Image from "next/image";
 import Link from "next/link";
+import ExportedImage from "next-image-export-optimizer";
 import { FaGithub } from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
 import { BsFillPersonBadgeFill } from "react-icons/bs";
 import { BentoSkeleton } from "@/components/common";
 import { BentoGridProps } from "@/components/aceternity/bento-grid";
+import RustScriptStatic from "/public/RustScript.png";
 
 export const projects: BentoGridProps[] = [
   {
     header: (
-      <Image
-        src="/RustScript.png"
+      <ExportedImage
+        src={RustScriptStatic}
         alt="Rustscript logo"
         width={96}
         height={96}
