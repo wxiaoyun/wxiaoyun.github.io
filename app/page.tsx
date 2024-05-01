@@ -1,7 +1,10 @@
+import type { Metadata } from "next";
+
+import { Separator } from "@/components/ui/separator";
+import { BentoGrid, BentoGridItem } from "@/components/aceternity/bento-grid";
 import { TextGenerateEffect } from "@/components/aceternity/text-generate-effect";
 import { SkillGrid } from "@/components/skills";
-import { Separator } from "@/components/ui/separator";
-import type { Metadata } from "next";
+import { interests } from "./interests";
 
 export const metadata: Metadata = {
   title: "Wu Xiaoyun - Home",
@@ -26,9 +29,26 @@ export default function Home() {
       <Separator />
       <section className="w-full">
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-          Technologies I use
+          Tools and Technologies
         </h3>
         <SkillGrid className="mx-auto mt-6" />
+      </section>
+      <Separator />
+      <section>
+        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+          My Interests
+        </h3>
+        <BentoGrid className="mt-6">
+          {interests.map(({ header, title, description, className }, index) => (
+            <BentoGridItem
+              key={index}
+              header={header}
+              title={title}
+              description={description}
+              className={className}
+            />
+          ))}
+        </BentoGrid>
       </section>
     </main>
   );

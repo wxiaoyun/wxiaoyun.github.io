@@ -43,7 +43,7 @@ export const SkillGrid: React.FC<Props> = ({ className }) => {
               size={size}
               gap={gap}
             >
-              <Skill className="w-8 h-8 opacity-60 hover:opacity-80  transition-colors" />
+              <Skill className="w-10 h-10 opacity-60 hover:opacity-80  transition-opacity" />
             </SkillCell>
           )),
         )}
