@@ -1,8 +1,9 @@
 import { MdOutlineGolfCourse, MdLocalMovies } from "react-icons/md";
 import { FaPersonRunning } from "react-icons/fa6";
 import { CgGym } from "react-icons/cg";
+import { BentoGridProps } from "@/components/aceternity/bento-grid";
 
-export const interests = [
+export const interests: BentoGridProps[] = [
   {
     header: (
       <FaPersonRunning className="w-24 h-24 m-auto opacity-60 group-hover/bento:rotate-3 transition-all" />

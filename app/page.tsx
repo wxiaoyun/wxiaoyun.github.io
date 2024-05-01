@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Separator } from "@/components/ui/separator";
 import { BentoGrid, BentoGridItem } from "@/components/aceternity/bento-grid";
 import { TextGenerateEffect } from "@/components/aceternity/text-generate-effect";
-import { SkillGrid } from "@/components/skills";
+import { SkillGrid, SkillsIcons } from "@/components/skills";
 import { interests } from "./interests";
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ export default function Home() {
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
           Tools and Technologies
         </h3>
-        <SkillGrid className="mx-auto mt-6" />
+        <SkillGrid className="mx-auto mt-6" skills={SkillsIcons} />
       </section>
       <Separator />
       <section>
@@ -39,14 +39,8 @@ export default function Home() {
           My Interests
         </h3>
         <BentoGrid className="mt-6">
-          {interests.map(({ header, title, description, className }, index) => (
-            <BentoGridItem
-              key={index}
-              header={header}
-              title={title}
-              description={description}
-              className={className}
-            />
+          {interests.map((props, index) => (
+            <BentoGridItem key={index} {...props} />
           ))}
         </BentoGrid>
       </section>

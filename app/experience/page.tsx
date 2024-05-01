@@ -18,16 +18,7 @@ export default function Page() {
         </h3>
         <BentoGrid className="mt-6">
           {professionalExperiences.map((props, index) => (
-            <BentoGridItem
-              key={index}
-              isPlaceHolder={props.isPlaceHolder}
-              className={props.className}
-              header={props.header}
-              icon={props.icon}
-              title={props.title}
-              description={props.description}
-              footer={props.footer}
-            />
+            <BentoGridItem key={index} {...props} />
           ))}
         </BentoGrid>
       </section>
@@ -38,16 +29,7 @@ export default function Page() {
         </h3>
         <BentoGrid className="mt-6">
           {projects.map((props, index) => (
-            <BentoGridItem
-              key={index}
-              isPlaceHolder={props.isPlaceHolder}
-              className={props.className}
-              header={props.header}
-              icon={props.icon}
-              title={props.title}
-              description={props.description}
-              footer={props.footer}
-            />
+            <BentoGridItem key={index} {...props} />
           ))}
         </BentoGrid>
       </section>

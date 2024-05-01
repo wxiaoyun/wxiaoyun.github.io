@@ -22,7 +22,7 @@ import {
   SiBun,
 } from "react-icons/si";
 
-export const SkillsIcons: React.FC<Props>[] = [
+const SkillsFCs: React.FC<Props>[] = [
   GrArchlinux,
   SiNeovim,
   FaGitAlt,
@@ -47,3 +47,10 @@ export const SkillsIcons: React.FC<Props>[] = [
   SiNodedotjs,
   SiBun,
 ];
+
+export const SkillsIcons = SkillsFCs.map((Icon, index) => (
+  <Icon
+    key={index}
+    className="w-10 h-10 opacity-60 hover:opacity-80  transition-opacity"
+  />
+));

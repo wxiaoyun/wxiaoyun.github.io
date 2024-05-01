@@ -4,15 +4,23 @@ import React from "react";
 import { motion, useMotionValue } from "framer-motion";
 import { ChunkArray } from "@/util";
 import { SkillCell } from "./skill-cell";
-import { SkillsIcons } from "./skills";
 
-const size = 60;
-const gap = 5;
-const columns = 5;
+type SkillGridProps = {
+  size?: number;
+  gap?: number;
+  columns?: number;
+  skills: React.ReactNode[];
+} & Props;
 
-const Skills2D: React.FC<Props>[][] = ChunkArray(SkillsIcons, columns);
+export const SkillGrid: React.FC<SkillGridProps> = ({
+  size = 60,
+  gap = 5,
+  columns = 5,
+  skills,
+  className,
+}) => {
+  const Skills2D: React.ReactNode[][] = ChunkArray(skills, columns);
 
-export const SkillGrid: React.FC<Props> = ({ className }) => {
   // use -1 to prevent element[0][0] form glitching
   const [active, setActive] = React.useState({ row: -1, col: -1 });
   const x = useMotionValue(0);
@@ -43,7 +51,7 @@ export const SkillGrid: React.FC<Props> = ({ className }) => {
               size={size}
               gap={gap}
             >
-              <Skill className="w-10 h-10 opacity-60 hover:opacity-80  transition-opacity" />
+              {Skill}
             </SkillCell>
           )),
         )}
