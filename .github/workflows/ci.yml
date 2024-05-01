@@ -38,6 +38,9 @@ jobs:
         with:
           bun-version: canary
 
+      - name: Set Output Mode
+        run: echo "OUTPUT_MODE=export" >> $GITHUB_ENV
+
       - name: Install dependencies and build project
         run: |
           bun install

@@ -20,7 +20,7 @@ const navItems = [
   },
   {
     title: "Resume",
-    href: "/resume",
+    href: "/wu_xiaoyun_resume.pdf",
   },
 ];
 

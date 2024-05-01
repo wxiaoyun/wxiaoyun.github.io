@@ -1,7 +1,8 @@
-import { BentoGrid, BentoGridItem } from "@/components/aceternity/bento-grid";
-import { Separator } from "@/components/ui/separator";
 import type { Metadata } from "next";
+import { Separator } from "@/components/ui/separator";
+import { BentoGrid, BentoGridItem } from "@/components/aceternity/bento-grid";
 import { projects } from "./project";
+import { professionalExperiences } from "./professional-experience";
 
 export const metadata: Metadata = {
   title: "Wu Xiaoyun - Experience",
@@ -16,13 +17,16 @@ export default function Page() {
           Professional Experience
         </h3>
         <BentoGrid className="mt-6">
-          {projects.map(({ header, title, description, className }, index) => (
+          {professionalExperiences.map((props, index) => (
             <BentoGridItem
               key={index}
-              header={header}
-              title={title}
-              description={description}
-              className={className}
+              isPlaceHolder={props.isPlaceHolder}
+              className={props.className}
+              header={props.header}
+              icon={props.icon}
+              title={props.title}
+              description={props.description}
+              footer={props.footer}
             />
           ))}
         </BentoGrid>
@@ -33,13 +37,16 @@ export default function Page() {
           Projects
         </h3>
         <BentoGrid className="mt-6">
-          {projects.map(({ header, title, description, className }, index) => (
+          {projects.map((props, index) => (
             <BentoGridItem
               key={index}
-              header={header}
-              title={title}
-              description={description}
-              className={className}
+              isPlaceHolder={props.isPlaceHolder}
+              className={props.className}
+              header={props.header}
+              icon={props.icon}
+              title={props.title}
+              description={props.description}
+              footer={props.footer}
             />
           ))}
         </BentoGrid>
