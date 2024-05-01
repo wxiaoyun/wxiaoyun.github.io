@@ -27,7 +27,11 @@ jobs:
 
   build-and-deploy:
     needs: [eslint]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
 
     steps:
       - name: Checkout repo
