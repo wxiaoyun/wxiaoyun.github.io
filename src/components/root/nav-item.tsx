@@ -23,7 +23,8 @@ export const NavItem: React.FC<NavItemProps> = ({
   className,
 }) => {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  // Any path will always start with "/"
+  const isActive = href === "/" ? href === pathname : pathname.startsWith(href);
 
   return (
     <Link
