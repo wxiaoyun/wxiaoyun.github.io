@@ -15,7 +15,7 @@ export default async function Page() {
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
           Blogs
         </h3>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-col gap-3">
           {mediumData.items.map((item) => (
             <BlogPost key={item.guid} item={item} />
           ))}
