@@ -10,7 +10,6 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiJavascript,
-  SiNeovim,
   SiPytorch,
   SiPandas,
   SiNumpy,
@@ -20,11 +19,14 @@ import {
   SiPostgresql,
   SiNodedotjs,
   SiBun,
+  SiVim,
+  SiTauri,
 } from "react-icons/si";
+import { IconType } from "react-icons/lib";
 
-const SkillsFCs: React.FC<Props>[] = [
+const SkillsFCs: IconType[] = [
   GrArchlinux,
-  SiNeovim,
+  SiVim,
   FaGitAlt,
   SiRust,
   SiTypescript,
@@ -37,6 +39,7 @@ const SkillsFCs: React.FC<Props>[] = [
   FaDocker,
   SiReact,
   SiNextdotjs,
+  SiTauri,
   SiRedux,
   SiTailwindcss,
   SiPytorch,
@@ -51,6 +54,7 @@ const SkillsFCs: React.FC<Props>[] = [
 export const SkillsIcons = SkillsFCs.map((Icon, index) => (
   <Icon
     key={index}
-    className="w-10 h-10 opacity-60 hover:opacity-80  transition-opacity"
+    size={80}
+    className="opacity-60 hover:opacity-80  transition-opacity"
   />
 ));

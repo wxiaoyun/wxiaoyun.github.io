@@ -31,7 +31,13 @@ export default function Home() {
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
           Tools and Technologies
         </h3>
-        <SkillGrid className="mx-auto mt-6" skills={SkillsIcons} />
+        <SkillGrid
+          skills={SkillsIcons}
+          rowSize={6}
+          autoplayInterval={2000}
+          rowsDelay={125}
+          className="mt-6 flex flex-col gap-6"
+        />
       </section>
       <Separator />
       <section>
