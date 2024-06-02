@@ -9,18 +9,22 @@ const navItemProps: NavItemProps[] = [
   {
     title: "Home",
     href: "/",
+    prefetch: true,
   },
   {
     title: "Experience",
     href: "/experience",
+    prefetch: true,
   },
   {
     title: "Blog",
     href: "/blog",
+    prefetch: true,
   },
   {
     title: "Resume",
     href: "/wu_xiaoyun_resume.pdf",
+    prefetch: true,
   },
 ];
 
