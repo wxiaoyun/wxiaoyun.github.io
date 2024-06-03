@@ -10,7 +10,7 @@ export const interests: BentoGridProps[] = [
     ),
     title: "Running",
     description: "I love running and I am training for a marathon.",
-    className: "bg-neutral-50 hover:shadow-md sm:col-span-2",
+    className: "bg-neutral-50 sm:col-span-2",
   },
   {
     header: (
@@ -18,7 +18,7 @@ export const interests: BentoGridProps[] = [
     ),
     title: "Movies",
     description: "I enjoy watching movies and TV shows.",
-    className: "bg-neutral-50 hover:shadow-md",
+    className: "bg-neutral-50",
   },
   {
     header: (
@@ -26,7 +26,7 @@ export const interests: BentoGridProps[] = [
     ),
     title: "Gym",
     description: "I never skip leg day.",
-    className: "bg-neutral-50 hover:shadow-md",
+    className: "bg-neutral-50",
   },
   {
     header: (
@@ -34,6 +34,6 @@ export const interests: BentoGridProps[] = [
     ),
     title: "Golf",
     description: "I enjoy playing golf on weekends.",
-    className: "bg-neutral-50 hover:shadow-md sm:col-span-2",
+    className: "bg-neutral-50 sm:col-span-2",
   },
 ];

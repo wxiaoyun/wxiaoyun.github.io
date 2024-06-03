@@ -30,7 +30,7 @@ export const projects: BentoGridProps[] = [
     ),
     description:
       "A statically typed, interpreted, concurrent programming lanugag combining Rust’s syntax with the simplicity of TypeScript and Go. Rustscript is first compiled to bytecode, akin to Java, and then interpreted by a virtual machine. The core features include a type system, higher order functions, concurrency, and a garbage collector.",
-    className: "bg-neutral-50 hover:shadow-md sm:col-span-2",
+    className: "bg-neutral-50 sm:col-span-2",
   },
   {
     header: (
@@ -48,7 +48,7 @@ export const projects: BentoGridProps[] = [
     ),
     description:
       "The current portfolio you are viewing. A minimalist design with a focus on responsive UI.  Built with Next.js, shadcn/ui, Aceternity UI and Bunjs.",
-    className: "bg-neutral-50 hover:shadow-md",
+    className: "bg-neutral-50",
   },
   BentoSkeleton,
   {
@@ -67,6 +67,6 @@ export const projects: BentoGridProps[] = [
     ),
     description:
       "A two year school project aimed to improve literacy level in Ou Ruessei, a village located at Cambodia. I built a Digital Library Management System with User Interface to let the locals use our library with ease. Users can borrow, return renew and reserve books while staff can carry out administrative actions. All resources are managed with Role Based Access Control.",
-    className: "bg-neutral-50 hover:shadow-md sm:col-span-2",
+    className: "bg-neutral-50 sm:col-span-2",
   },
 ];
