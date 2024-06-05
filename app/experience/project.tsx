@@ -34,7 +34,7 @@ export const projects: BentoGridProps[] = [
   },
   {
     header: (
-      <BsFillPersonBadgeFill className="w-24 h-24 m-auto opacity-60 group-hover/bento:rotate-3 transition-all" />
+      <BsFillPersonBadgeFill className="w-24 h-24 m-auto opacity-70 group-hover/bento:rotate-3 transition-all" />
     ),
     title: "Portfolio",
     icon: (
@@ -53,7 +53,7 @@ export const projects: BentoGridProps[] = [
   BentoSkeleton,
   {
     header: (
-      <IoLibrary className="w-24 h-24 m-auto opacity-60 group-hover/bento:rotate-3 transition-all" />
+      <IoLibrary className="w-24 h-24 m-auto opacity-70 group-hover/bento:rotate-3 transition-all" />
     ),
     title: "Cambodia Community Library",
     icon: (
