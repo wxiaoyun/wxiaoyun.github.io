@@ -12,7 +12,7 @@ export const BlogPost: React.FC<BlogPostProps> = ({ item, className }) => {
     month: "long",
     day: "numeric",
   });
-  const content = new jsdom.JSDOM(item.content);
+  const content = new jsdom.JSDOM(item["content:encoded"]);
   const paragraphs = content.window.document.getElementsByTagName("p");
   const firstParagraph = paragraphs[0].textContent;
 

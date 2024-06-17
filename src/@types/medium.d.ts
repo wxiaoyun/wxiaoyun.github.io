@@ -21,7 +21,8 @@ type MediumItem = {
   author: string;
   thumbnail: string;
   description: string;
-  content: string;
+  "content:encoded": string;
+  "content:encodedSnippet": string;
   enclosure: unknown;
   categories: string[];
 };
