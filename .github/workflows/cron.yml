@@ -2,8 +2,7 @@ name: Scheduled Rebuild and Deploy
 
 on:
   schedule:
-    # Runs at 00:00 UTC every Monday
-    - cron: "0 0 * * 1"
+    - cron: "0 0 1 * *"
 
 jobs:
   build_and_deploy:

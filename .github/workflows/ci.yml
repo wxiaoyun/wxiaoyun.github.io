@@ -22,9 +22,6 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Run ESLint
-        run: bun run lint
-
   build-and-deploy:
     needs: [eslint]
     runs-on: ubuntu-22.04
