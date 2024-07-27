@@ -6,7 +6,7 @@ import { BentoGridProps } from "@/components/aceternity/bento-grid";
 export const interests: BentoGridProps[] = [
   {
     header: (
-      <FaPersonRunning className="w-24 h-24 m-auto opacity-60 group-hover/bento:rotate-3 transition-all" />
+      <FaPersonRunning className="w-24 h-24 m-auto opacity-70 group-hover/bento:rotate-3 transition-all" />
     ),
     title: "Running",
     description: "I love running and I am training for a marathon.",
@@ -14,7 +14,7 @@ export const interests: BentoGridProps[] = [
   },
   {
     header: (
-      <MdLocalMovies className="w-24 h-24 m-auto opacity-60 group-hover/bento:rotate-3 transition-all" />
+      <MdLocalMovies className="w-24 h-24 m-auto opacity-70 group-hover/bento:rotate-3 transition-all" />
     ),
     title: "Movies",
     description: "I enjoy watching movies and TV shows.",
@@ -22,7 +22,7 @@ export const interests: BentoGridProps[] = [
   },
   {
     header: (
-      <CgGym className="w-24 h-24 m-auto opacity-60 group-hover/bento:rotate-3 transition-all" />
+      <CgGym className="w-24 h-24 m-auto opacity-70 group-hover/bento:rotate-3 transition-all" />
     ),
     title: "Gym",
     description: "I never skip leg day.",
@@ -30,7 +30,7 @@ export const interests: BentoGridProps[] = [
   },
   {
     header: (
-      <MdOutlineGolfCourse className="w-24 h-24 m-auto opacity-60 group-hover/bento:rotate-3 transition-all" />
+      <MdOutlineGolfCourse className="w-24 h-24 m-auto opacity-70 group-hover/bento:rotate-3 transition-all" />
     ),
     title: "Golf",
     description: "I enjoy playing golf on weekends.",

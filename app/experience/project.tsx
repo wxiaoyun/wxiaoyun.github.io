@@ -1,10 +1,10 @@
-import Link from "next/link";
+import { BentoGridProps } from "@/components/aceternity/bento-grid";
+import { BentoSkeleton } from "@/components/common";
 import ExportedImage from "next-image-export-optimizer";
+import Link from "next/link";
+import { BsFillPersonBadgeFill } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
-import { BsFillPersonBadgeFill } from "react-icons/bs";
-import { BentoSkeleton } from "@/components/common";
-import { BentoGridProps } from "@/components/aceternity/bento-grid";
 import RustScriptStatic from "/public/RustScript.png";
 
 export const projects: BentoGridProps[] = [
@@ -29,12 +29,12 @@ export const projects: BentoGridProps[] = [
       </Link>
     ),
     description:
-      "A statically typed, interpreted, concurrent programming lanugag combining Rust’s syntax with the simplicity of TypeScript and Go. Rustscript is first compiled to bytecode, akin to Java, and then interpreted by a virtual machine. The core features include a type system, higher order functions, concurrency, and a garbage collector.",
+      "Developed a statically typed, compiled programming language combining Rust's syntax with the simplicity of TypeScript and Go with core features including primitive data types, higher-order functions, type checking, concurrency and garbage collector. The language to compile code into bytecode, akin to Java, followed by execution on a virtual machine.",
     className: "bg-neutral-50 sm:col-span-2",
   },
   {
     header: (
-      <BsFillPersonBadgeFill className="w-24 h-24 m-auto opacity-60 group-hover/bento:rotate-3 transition-all" />
+      <BsFillPersonBadgeFill className="w-24 h-24 m-auto opacity-70 group-hover/bento:rotate-3 transition-all" />
     ),
     title: "Portfolio",
     icon: (
@@ -53,7 +53,7 @@ export const projects: BentoGridProps[] = [
   BentoSkeleton,
   {
     header: (
-      <IoLibrary className="w-24 h-24 m-auto opacity-60 group-hover/bento:rotate-3 transition-all" />
+      <IoLibrary className="w-24 h-24 m-auto opacity-70 group-hover/bento:rotate-3 transition-all" />
     ),
     title: "Cambodia Community Library",
     icon: (
@@ -66,7 +66,7 @@ export const projects: BentoGridProps[] = [
       </Link>
     ),
     description:
-      "A two year school project aimed to improve literacy level in Ou Ruessei, a village located at Cambodia. I built a Digital Library Management System with User Interface to let the locals use our library with ease. Users can borrow, return renew and reserve books while staff can carry out administrative actions. All resources are managed with Role Based Access Control.",
+      "Solo built a full stack Library Management System with role based access control for a village located at Cambodia. It is a two year school project aimed to improve literacy level in Ou Ruessei, a village located at Cambodia.",
     className: "bg-neutral-50 sm:col-span-2",
   },
 ];
