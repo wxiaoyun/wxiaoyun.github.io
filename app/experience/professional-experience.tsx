@@ -58,7 +58,7 @@ export const professionalExperiences: BentoGridProps[] = [
       </Link>
     ),
     description:
-      "Reduced backend response time from 5 - 20 times by porting a Case Management System backend from Ruby on Rails to Golang. Features ported include RBAC, Auth, 2FA and Masquerading.",
+      "Reduced backend response time by 5 times by porting a Case Management System backend from Ruby on Rails to Golang. Features ported include RBAC, Auth, 2FA and Masquerading.",
     className: "bg-neutral-50 sm:col-span-2",
     footer: (
       <small className="text-xs text-muted-foreground">05/2023 - 08/2023</small>
