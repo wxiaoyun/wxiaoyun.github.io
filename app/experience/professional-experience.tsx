@@ -38,7 +38,7 @@ export const professionalExperiences: BentoGridProps[] = [
     ),
     className: "bg-neutral-50 sm:col-span-2",
     footer: (
-      <small className="text-xs text-muted-foreground">05/2024 - Present</small>
+      <small className="text-xs text-muted-foreground">05/2024 - 09/2024</small>
     ),
   },
   BentoSkeleton,

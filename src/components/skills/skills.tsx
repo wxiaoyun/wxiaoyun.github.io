@@ -1,28 +1,28 @@
-import React from "react";
+import { FaDocker, FaGitAlt, FaJava, FaPython } from "react-icons/fa6";
 import { GrArchlinux } from "react-icons/gr";
-import { TbBrandGolang } from "react-icons/tb";
-import { FaGitAlt, FaDocker, FaJava, FaPython } from "react-icons/fa6";
-import {
-  SiRust,
-  SiReact,
-  SiRedux,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiTypescript,
-  SiJavascript,
-  SiPytorch,
-  SiPandas,
-  SiNumpy,
-  SiHtml5,
-  SiCss3,
-  SiRedis,
-  SiPostgresql,
-  SiNodedotjs,
-  SiBun,
-  SiVim,
-  SiTauri,
-} from "react-icons/si";
 import { IconType } from "react-icons/lib";
+import {
+  SiBun,
+  SiCss3,
+  SiHtml5,
+  SiJavascript,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiNumpy,
+  SiPandas,
+  SiPostgresql,
+  SiPytorch,
+  SiReact,
+  SiRedis,
+  SiRedux,
+  SiRust,
+  SiSolid,
+  SiTailwindcss,
+  SiTauri,
+  SiTypescript,
+  SiVim,
+} from "react-icons/si";
+import { TbBrandGolang } from "react-icons/tb";
 
 const SkillsFCs: IconType[] = [
   GrArchlinux,
@@ -38,6 +38,7 @@ const SkillsFCs: IconType[] = [
   SiCss3,
   FaDocker,
   SiReact,
+  SiSolid,
   SiNextdotjs,
   SiTauri,
   SiRedux,
