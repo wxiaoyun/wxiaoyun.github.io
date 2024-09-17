@@ -27,7 +27,7 @@
     "husky": "^9.0.11",
     "jsdom": "^25.0.0",
     "lucide-react": "^0.407.0",
-    "next": "14.2.7",
+    "next": "14.2.12",
     "next-image-export-optimizer": "^1.12.3",
     "popmotion": "^11.0.5",
     "react": "^18",
