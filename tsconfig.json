@@ -11,6 +11,6 @@
     }
   },
   "include": ["src", ".astro", "**/*.ts", "**/*.d.ts"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "dist"],
   "extends": "astro/tsconfigs/strict"
 }
