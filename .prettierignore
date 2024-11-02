@@ -1,0 +1,14 @@
+build
+dist
+node_modules
+
+.astro
+.github
+.vscode
+
+public
+
+**/*.html
+
+pnpm-lock.yaml
+renovate.json
