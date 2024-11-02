@@ -4,6 +4,7 @@ import Header from "@/components/Header.astro";
 import { Separator } from "@/components/ui/separator";
 import "@/index.css";
 import { AstroFont } from "astro-font";
+import { ViewTransitions } from 'astro:transitions';
 
 export type LayoutProps = {
   title: string;
@@ -34,6 +35,7 @@ const { title = "Wu Xiaoyun" } = Astro.props as LayoutProps;
         },
       ]}
     />
+    <ViewTransitions />
   </head>
   <body class="antialiased bg-gray-50">
     <div

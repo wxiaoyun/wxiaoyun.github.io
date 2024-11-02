@@ -1,8 +1,8 @@
 ---
 import {
-  FaBrandsGithub,
-  FaBrandsLinkedin,
-  FaBrandsMedium,
+FaBrandsGithub,
+FaBrandsLinkedin,
+FaBrandsMedium,
 } from "solid-icons/fa";
 import { SiGmail } from "solid-icons/si";
 import type { LinkIconProps } from "./LinkIcon.astro";
@@ -65,7 +65,7 @@ const socialLinkProps: LinkIconProps[] = [
   >
     {
       navItemProps.map((props) => (
-        <a href={props.href} class="relative px-2 sm:px-3">
+        <a href={props.href} class="relative px-2 sm:px-3" data-astro-prefetch="load">
           <span class="text-md text-muted-foreground hover:text-foreground transition-colors duration-300">
             {props.title}
           </span>

@@ -4,9 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  prefetch: {
-    prefetchAll: true,
-  },
+  prefetch: true,
   output: "static",
   site: "https://wxiaoyun.github.io",
   integrations: [
