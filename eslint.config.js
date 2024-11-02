@@ -1,6 +1,6 @@
 import { default as js } from "@eslint/js";
 import * as tsParser from "@typescript-eslint/parser";
-import eslintPluginAstro from 'eslint-plugin-astro';
+import eslintPluginAstro from "eslint-plugin-astro";
 import solid from "eslint-plugin-solid/configs/typescript";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -18,7 +18,7 @@ export default [
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: "tsconfig.json",
+        project: "./tsconfig.json",
       },
     },
   },
