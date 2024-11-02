@@ -56,7 +56,7 @@ export const projects: BentoGridItemProps[] = [
     title: "Portfolio",
     icon: (
       <a
-        href="https://github.com/ForAeons/ForAeons.github.io"
+        href="https://github.com/wxiaoyun/wxiaoyun.github.io"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -75,7 +75,7 @@ export const projects: BentoGridItemProps[] = [
     title: "Cambodia Community Library",
     icon: (
       <a
-        href="https://github.com/ForAeons/lms-backend"
+        href="https://github.com/wxiaoyun/lms-backend"
         target="_blank"
         rel="noopener noreferrer"
       >
