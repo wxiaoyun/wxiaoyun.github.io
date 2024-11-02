@@ -15,15 +15,13 @@ import rspack from "../assets/rspack.svg";
 // Optimise images at build time
 const rustScriptPng = await getImage({
   src: rustScript,
-  format: "png",
+  format: "webp",
 });
 const cvwoSvg = await getImage({
   src: cvwo,
-  format: "svg",
 });
 const rspackSvg = await getImage({
   src: rspack,
-  format: "svg",
 });
 
 export const projects: BentoGridItemProps[] = [
