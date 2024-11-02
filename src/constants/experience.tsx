@@ -3,16 +3,32 @@ import {
   BentoSkeletonWide,
   type BentoGridItemProps,
 } from "@/components/BentoGrid";
+import { getImage } from "astro:assets";
 import { BsPersonBadgeFill } from "solid-icons/bs";
 import { FaBrandsGithub, FaBrandsTiktok } from "solid-icons/fa";
 import { FiExternalLink } from "solid-icons/fi";
 import { ImLibrary } from "solid-icons/im";
+import rustScript from "../assets/RustScript.png";
+import cvwo from "../assets/cvwo.svg";
+import rspack from "../assets/rspack.svg";
+
+// Optimise images at build time
+const rustScriptPng = await getImage({
+  src: rustScript,
+  format: "webp",
+});
+const cvwoSvg = await getImage({
+  src: cvwo,
+});
+const rspackSvg = await getImage({
+  src: rspack,
+});
 
 export const projects: BentoGridItemProps[] = [
   {
     header: (
       <img
-        src="/RustScript.png"
+        src={rustScriptPng.src}
         alt="Rustscript logo"
         width={96}
         height={96}
@@ -76,7 +92,7 @@ export const openSourceContrib: BentoGridItemProps[] = [
   {
     header: (
       <img
-        src="/rspack.svg"
+        src={rspackSvg.src}
         alt="Rspack logo"
         width={96}
         height={96}
@@ -143,7 +159,7 @@ export const professionalExperiences: BentoGridItemProps[] = [
     header: (
       <img
         class="group-hover/bento:scale-105 transition-transform h-[96px]"
-        src="/cvwo.svg"
+        src={cvwoSvg.src}
         alt="CVWO Logo"
       />
     ),
