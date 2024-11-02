@@ -7,6 +7,9 @@ import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  {
+    ignores: ["node_modules", "dist", "build"],
+  },
   js.configs.recommended,
   { files: ["**/*.{js,mjs,cjs,ts}"] },
   { languageOptions: { globals: globals.browser } },
