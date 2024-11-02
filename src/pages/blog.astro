@@ -1,0 +1,51 @@
+---
+import MediumArticle from "@/components/MediumArticle.astro";
+import "@/index.css";
+import Layout from "@/layouts/Layout.astro";
+import Parser from "rss-parser";
+
+export type MediumData = {
+  status: string;
+  feed: MediumFeed;
+  items: MediumItem[];
+};
+
+export type MediumFeed = {
+  url: string;
+  title: string;
+  link: string;
+  author: string;
+  description: string;
+  image: string;
+};
+
+export type MediumItem = {
+  title: string;
+  pubDate: string;
+  link: string;
+  guid: string;
+  author: string;
+  thumbnail: string;
+  description: string;
+  "content:encoded": string;
+  "content:encodedSnippet": string;
+  enclosure: unknown;
+  categories: string[];
+};
+
+const MEDIUM_FEED_URL = "https://medium.com/feed/@w.xy020203";
+const res = await fetch(MEDIUM_FEED_URL);
+const rssStr = await res.text();
+const mediumData = (await new Parser().parseString(rssStr)) as MediumData;
+---
+
+<Layout title="Wu Xiaoyun - Blogs">
+  <main class="flex flex-col gap-12 py-6">
+    <section>
+      <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">Blogs</h3>
+      <div class="mt-6 flex flex-col gap-3">
+        {mediumData.items.map((item) => <MediumArticle item={item} />)}
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,5 +1,18 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import solidJs from "@astrojs/solid-js";
+import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  prefetch: {
+    prefetchAll: true,
+  },
+  output: "static",
+  site: "https://wxiaoyun.github.io",
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    solidJs({ devtools: true }),
+  ],
+});

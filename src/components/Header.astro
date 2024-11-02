@@ -1,0 +1,80 @@
+---
+import {
+  FaBrandsGithub,
+  FaBrandsLinkedin,
+  FaBrandsMedium,
+} from "solid-icons/fa";
+import { SiGmail } from "solid-icons/si";
+import type { LinkIconProps } from "./LinkIcon.astro";
+import LinkIcon from "./LinkIcon.astro";
+
+const navItemProps = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Experience",
+    href: "/experience",
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+  },
+  {
+    title: "Resume",
+    href: "/wu_xiaoyun_resume.pdf",
+  },
+];
+
+const socialLinkClassName =
+  "h-6 w-6 opacity-40 hover:opacity-80 transition-opacity";
+const socialLinkProps: LinkIconProps[] = [
+  {
+    Icon: FaBrandsGithub,
+    href: "https://github.com/wxiaoyun",
+    ariaLabel: "GitHub",
+    className: socialLinkClassName,
+  },
+  {
+    Icon: FaBrandsLinkedin,
+    href: "https://www.linkedin.com/in/w-xiaoyun/",
+    ariaLabel: "LinkedIn",
+    className: socialLinkClassName,
+  },
+  {
+    Icon: FaBrandsMedium,
+    href: "https://medium.com/@w.xy020203",
+    ariaLabel: "Medium",
+    className: socialLinkClassName,
+  },
+  {
+    Icon: SiGmail,
+    href: "mailto:me@wxiaoyun.com",
+    ariaLabel: "Email",
+    className: socialLinkClassName,
+  },
+];
+---
+
+<header
+  class="w-full flex flex-col sm:flex-row gap-6 justify-between items-center"
+>
+  <nav
+    class="w-fit flex gap-2 lg:gap-6 bg-neutral-50 rounded-full items-center p-2 shadow-md hover:shadow-lg transition-shadow"
+  >
+    {
+      navItemProps.map((props) => (
+        <a href={props.href} class="relative px-2 sm:px-3">
+          <span class="text-md text-muted-foreground hover:text-foreground transition-colors duration-300">
+            {props.title}
+          </span>
+        </a>
+      ))
+    }
+  </nav>
+
+  <div class="flex gap-6">
+    {socialLinkProps.map((props) => <LinkIcon {...props} />)}
+  </div>
+</header>

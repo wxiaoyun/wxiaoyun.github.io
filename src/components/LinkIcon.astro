@@ -1,0 +1,16 @@
+---
+import type { Component } from "solid-js";
+
+export type LinkIconProps = {
+  ariaLabel?: string;
+  href: string;
+  className?: string;
+  Icon: Component<{ class?: string }>;
+};
+
+const { ariaLabel, href, Icon, className } = Astro.props as LinkIconProps;
+---
+
+<a target="_blank" rel="noopener noreferrer" href={href} aria-label={ariaLabel}>
+  <Icon class={className} />
+</a>

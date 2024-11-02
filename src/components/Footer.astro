@@ -1,0 +1,34 @@
+---
+import { SiAstro } from "solid-icons/si";
+import { TbBrandSolidjs } from "solid-icons/tb";
+import LinkIcon, { type LinkIconProps } from "./LinkIcon.astro";
+
+const year = new Date().getFullYear();
+
+const techStackClassName = "h-4 w-4 hover:opacity-80 transition-opacity";
+const techStack: LinkIconProps[] = [
+  {
+    href: "https://astro.build/",
+    Icon: SiAstro,
+    ariaLabel: "Astro",
+    className: techStackClassName,
+  },
+  {
+    href: "https://docs.solidjs.com/",
+    Icon: TbBrandSolidjs,
+    ariaLabel: "SolidJS",
+    className: techStackClassName,
+  },
+];
+---
+
+<footer class="w-full flex flex-col items-center gap-3">
+  <small class="text-xs text-muted-foreground">
+    {`Copyright (c) ${year} Wu Xiaoyun. All rights reserved.`}
+  </small>
+
+  <div class="text-sm text-muted-foreground flex gap-2 items-center">
+    <span>About this website: built with</span>
+    {techStack.map((t) => <LinkIcon {...t} />)}
+  </div>
+</footer>
