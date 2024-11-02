@@ -4,6 +4,7 @@ node_modules
 
 .astro
 .github
+.husky
 .vscode
 
 public
@@ -11,4 +12,6 @@ public
 **/*.html
 
 pnpm-lock.yaml
+components.json
 renovate.json
+README.md
