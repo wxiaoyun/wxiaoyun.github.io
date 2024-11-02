@@ -2,30 +2,28 @@
 
 ## Overview
 
-This is a personal portfolio page built with Nextjs and TypeScript. It utilizes
-a variety of modern web technologies including Framer Motion, Shadcn UI and
-Aceternity UI.
+This is a personal portfolio page built with Astro, SolidJS and Shadcn UI.
 
 ## Prerequisites
 
-- [Bun](https://bun.sh/)
+- [pnpm](https://pnpm.io/)
 
 ## Installation
 
-### Installing Bun
+### Installing pnpm
 
-If you haven't installed Bun yet, you can install it using the following
+If you haven't installed pnpm yet, you can install it using the following
 command:
 
 ```bash
-curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
+npm install -g pnpm
 ```
 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/ForAeons/ForAeons.github.io.git
-cd ForAeons.github.io
+git clone https://github.com/wxiaoyun/wxiaoyun.github.io.git
+cd wxiaoyun.github.io
 ```
 
 ### Install Packages
@@ -33,7 +31,7 @@ cd ForAeons.github.io
 To install the required packages, run:
 
 ```bash
-bun install
+pnpm install
 ```
 
 ## Running the Development Server
@@ -41,11 +39,11 @@ bun install
 To start the development server, run:
 
 ```bash
-bun dev
+pnpm run dev
 ```
 
 This will start the development server, and you can access the application at
-`http://localhost:300`.
+`http://localhost:4321` (default Astro port).
 
 ## Deploying to Github Pages
 
@@ -53,11 +51,9 @@ This will start the development server, and you can access the application at
 
 ## Built With
 
-- [Nextjs](https://nextjs.org/) - The web framework used
+- [Astro](https://astro.build/) - The web framework used
+- [SolidJS](https://www.solidjs.com/) - The UI framework used
 - [TypeScript](https://www.typescriptlang.org/) - For adding static types to
   JavaScript
 - [Tailwind](https://tailwindcss.com/) - A utility-first CSS framework
-- [Shadcn UI](https://ui.shadcn.com/) - A collection of UI components
-- [Aceternity UI](https://ui.aceternity.com/) - A collection of cool animated UI
-  components
-- [Framer Motion](https://www.framer.com/motion/) - For animations
+- [Shadcn UI](https://shadcn-solid.com/) - A collection of UI components
