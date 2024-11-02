@@ -30,7 +30,6 @@ export const SkillCarousel: Component<SkillCarouselProps> = (props) => {
   });
 
   onMount(() => {
-    console.log(props.initDelay);
     setTimeout(() => {
       autoplayPlugin.play();
     }, props.initDelay ?? 0);

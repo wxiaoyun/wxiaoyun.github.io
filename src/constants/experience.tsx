@@ -12,7 +12,7 @@ export const projects: BentoGridItemProps[] = [
   {
     header: (
       <img
-        src="RustScript.png"
+        src="/RustScript.png"
         alt="Rustscript logo"
         width={96}
         height={96}
@@ -76,7 +76,7 @@ export const openSourceContrib: BentoGridItemProps[] = [
   {
     header: (
       <img
-        src="rspack.svg"
+        src="/rspack.svg"
         alt="Rspack logo"
         width={96}
         height={96}
@@ -143,7 +143,7 @@ export const professionalExperiences: BentoGridItemProps[] = [
     header: (
       <img
         class="group-hover/bento:scale-105 transition-transform h-[96px]"
-        src="./cvwo.svg"
+        src="/cvwo.svg"
         alt="CVWO Logo"
       />
     ),
