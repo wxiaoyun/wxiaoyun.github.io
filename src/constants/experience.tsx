@@ -41,6 +41,7 @@ export const projects: BentoGridItemProps[] = [
         href="https://github.com/crabscript/rustscript"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Github repository for Rustscript"
       >
         <FaBrandsGithub class="hover:opacity-65 transition-opacity" />
       </a>
@@ -59,6 +60,7 @@ export const projects: BentoGridItemProps[] = [
         href="https://github.com/wxiaoyun/wxiaoyun.github.io"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Github repository for portfolio"
       >
         <FaBrandsGithub class="hover:opacity-65 transition-opacity" />
       </a>
@@ -78,6 +80,7 @@ export const projects: BentoGridItemProps[] = [
         href="https://github.com/wxiaoyun/lms-backend"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Github repository for Cambodia Community Library"
       >
         <FaBrandsGithub class="hover:opacity-65 transition-opacity" />
       </a>
@@ -105,6 +108,7 @@ export const openSourceContrib: BentoGridItemProps[] = [
         href="https://www.rspack.dev/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Rspack website"
       >
         <FiExternalLink class="hover:opacity-65 transition-opacity" />
       </a>
@@ -130,6 +134,7 @@ export const professionalExperiences: BentoGridItemProps[] = [
         href="https://www.bytedance.com/en/"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="ByteDance website"
       >
         <FiExternalLink />
       </a>
@@ -169,6 +174,7 @@ export const professionalExperiences: BentoGridItemProps[] = [
         href="https://www.comp.nus.edu.sg/~vwo/projects/2023-cms.html"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="CVWO website"
       >
         <FiExternalLink />
       </a>

@@ -1,0 +1,43 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+export type BlogPostProps = {
+  entry: CollectionEntry<"blog">;
+};
+
+const { entry } = Astro.props as BlogPostProps;
+const { Content } = await entry.render();
+const item = entry.data;
+const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout title={entry.data.title}>
+  <time
+    datetime={item.pubDate.toISOString()}
+    class="text-sm text-neutral-500 ml-auto"
+  >
+    {`Posted on ${pubDate}`}
+  </time>
+
+  <article class="prose-slate prose sm:prose-lg w-full">
+    <Content />
+  </article>
+
+  <a href="/blog" class="text-neutral-500 hover:underline mx-auto">
+    Click to read more blogs
+  </a>
+</Layout>

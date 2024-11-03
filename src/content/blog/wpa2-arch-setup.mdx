@@ -1,0 +1,137 @@
+---
+title: "Seamless WPA2-Enterprise Setup on Arch Linux: A Step-by-Step Guide"
+pubDate: "2024-05-02 14:32:30"
+link: "https://medium.com/p/6f6f00509a0a"
+thumbnail: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*tCvTXVkWKMzF_uWXsk6XNQ.png"
+description: "A simple step by step guide to setting up WPA2-Enterprise WiFi on Arch Linux."
+preview: "During my recent Arch Linux install, the hardest part I encountered was dealing with WPA2-Enterprise WiFi."
+categories: ["linux", "arch-linux", "wifi"]
+---
+
+# Seamless WPA2-Enterprise Setup on Arch Linux: A Step-by-Step Guide
+
+![Arch Linux Logo](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*tCvTXVkWKMzF_uWXsk6XNQ.png)
+
+During my recent Arch Linux install, the hardest part I encountered was dealing with WPA2-Enterprise WiFi. There wasn’t a consolidated step by step guide available on the internet and after having been through the struggle myself, I want to share how to properly setup WiFi on your Arch Linux install so you can start ricing as soon as possible.
+
+### Phase 1: ISO Stage
+
+1. Access `iwctl` Terminal
+   Type `iwctl` in the terminal. Commands prefixed with `[iwd]#` are executed inside the `iwctl` interactive prompt. To exit, type `exit`.
+
+2. List Wireless Devices
+
+```bash
+[iwd]# device list
+```
+
+1. Scan and List Networks
+   Replace `<name>` with your device name (e.g., `wlan0`):
+
+```bash
+[iwd]# station <name> scan
+[iwd]# station <name> get-networks
+```
+
+4. Connect to Network
+   To connect to a network, use its `SSID`:
+
+```bash
+[iwd]# station <name> connect <ssid>
+```
+
+To disconnect:
+
+```bash
+[iwd]# station <name> disconnect
+```
+
+5. Configure WPA2-Enterprise Network
+   Create and edit a network configuration file:
+
+```bash
+touch /var/lib/iwd/<ssid>.8021x
+nano /var/lib/iwd/<ssid>.8021x
+```
+
+Add the following details in the editor:
+
+```bash
+[Security]
+EAP-Method=PEAP
+Identity=<username>
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=<username>
+EAP-PEAP-Phase2-Password=<password>
+[Settings]
+AutoConnect=true
+```
+
+6. Restart iwd Service
+
+```bash
+systemctl restart iwd
+```
+
+7. Reconnect to WPA2-Enterprise Network
+
+```bash
+iwctl
+[iwd]# station <name> connect <ssid>
+[iwd]# station <name> show
+```
+
+8. Enable NetworkManager Daemon
+
+```bash
+systemctl enable NetworkManager
+```
+
+<small>
+  _For more details, visit the Arch Linux [Iwd
+  Guide](https://wiki.archlinux.org/title/Iwd#iwctl)._
+</small>
+
+### Phase 2: Post-Arch Installation
+
+After successfully installing the Linux firmware and rebooting into arch Linux, you might realize that you have lost your internet connection once again. So here we go again.
+
+1. Check Network Devices
+
+```bash
+nmcli d
+```
+
+2. Add a New Connection
+   Replace `<device>` with your device name, and `<connection_name>` with a name of your choice:
+
+```bash
+nmcli con add type wifi ifname <device> con-name <connection_name> ssid <ssid>
+```
+
+3. Configure and Connect
+   Enter the nmcli interactive prompt:
+
+```bash
+nmcli con edit id <connection_name>
+```
+
+Set up the connection details:
+
+```bash
+[nmcli]# set ipv4.method auto
+[nmcli]# set 802–1x.eap peap
+[nmcli]# set 802–1x.phase2-auth mschapv2
+[nmcli]# set 802–1x.identity <username>
+[nmcli]# set 802–1x.password <password>
+[nmcli]# set wifi-sec.key-mgmt wpa-eap
+[nmcli]# save
+[nmcli]# activate
+```
+
+Congratulations! You have successfully configured WPA2-Enterprise WiFi on your Arch Linux install.
+
+<small>
+  _Origin post by [user123456](https://askubuntu.com/users/411261/user123456) on
+  [AskUbuntu](https://askubuntu.com/questions/262491/connect-to-a-wpa2-enterprise-connection-via-cli-no-desktop)_
+</small>

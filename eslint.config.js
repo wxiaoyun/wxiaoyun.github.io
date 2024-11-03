@@ -8,7 +8,7 @@ import tseslint from "typescript-eslint";
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    ignores: ["node_modules", "dist", "build"],
+    ignores: ["node_modules", "dist", "build", ".astro", "tailwind.config.ts"],
   },
   js.configs.recommended,
   { files: ["**/*.{js,mjs,cjs,ts}"] },

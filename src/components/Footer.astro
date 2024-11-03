@@ -1,6 +1,5 @@
 ---
-import { SiAstro } from "solid-icons/si";
-import { TbBrandSolidjs } from "solid-icons/tb";
+import { SiAstro, SiSolid } from "solid-icons/si";
 import LinkIcon, { type LinkIconProps } from "./LinkIcon.astro";
 
 const year = new Date().getFullYear();
@@ -15,7 +14,7 @@ const techStack: LinkIconProps[] = [
   },
   {
     href: "https://docs.solidjs.com/",
-    Icon: TbBrandSolidjs,
+    Icon: SiSolid,
     ariaLabel: "SolidJS",
     className: techStackClassName,
   },

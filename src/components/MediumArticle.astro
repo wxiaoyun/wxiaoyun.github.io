@@ -1,35 +1,35 @@
 ---
-import type { MediumItem } from "@/pages/blog.astro";
-import jsdom from "jsdom";
+import type { CollectionEntry } from "astro:content";
 
 export type BlogPostProps = {
-  item: MediumItem;
+  entry: CollectionEntry<"blog">;
 };
 
-const { item } = Astro.props as BlogPostProps;
+const { entry } = Astro.props as BlogPostProps;
 
+const item = entry.data;
 const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
   year: "numeric",
   month: "long",
   day: "numeric",
 });
-const content = new jsdom.JSDOM(item["content:encoded"]);
-const paragraphs = content.window.document.getElementsByTagName("p");
-const firstParagraph = paragraphs[0].textContent;
 ---
 
 <article class="flex flex-col">
   <div class="flex justify-between">
-    <a href={item.guid} target="_blank" rel="noopener noreferrer">
+    <a href={`blog/${entry.slug}`} aria-label={item.description}>
       <h4
         class="scroll-m-20 text-md font-semibold tracking-tight hover:underline"
       >
         {item.title}
       </h4>
     </a>
-    <time datetime={item.pubDate} class="text-sm text-neutral-500">
+    <time
+      datetime={item.pubDate.toISOString()}
+      class="text-sm text-neutral-500"
+    >
       {pubDate}
     </time>
   </div>
-  <p class="text-sm text-muted-foreground truncate">{firstParagraph}</p>
+  <p class="text-sm text-muted-foreground truncate">{item.preview}</p>
 </article>

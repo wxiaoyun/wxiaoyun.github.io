@@ -1,1 +1,1 @@
-pnpm run fmt && pnpm run astro check && pnpm run lint
+pnpm run fmt && pnpm run sync && pnpm run astro check && pnpm run lint

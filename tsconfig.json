@@ -10,7 +10,7 @@
       "@public/*": ["./public/*"]
     }
   },
-  "include": ["src", ".astro", "**/*.ts", "**/*.d.ts"],
+  "include": ["src", ".astro"],
   "exclude": ["node_modules", "dist"],
   "extends": "astro/tsconfigs/strict"
 }

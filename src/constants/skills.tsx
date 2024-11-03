@@ -8,9 +8,8 @@ import {
 } from "solid-icons/fa";
 import {
   SiArchlinux,
-  SiBun,
+  SiAstro,
   SiCss3,
-  SiDeno,
   SiHtml5,
   SiJavascript,
   SiNextdotjs,
@@ -45,6 +44,7 @@ const SkillsFCs: IconTypes[] = [
   FaBrandsDocker,
   SiReact,
   SiSolid,
+  SiAstro,
   SiNextdotjs,
   SiTauri,
   SiRedux,
@@ -55,8 +55,6 @@ const SkillsFCs: IconTypes[] = [
   SiPostgresql,
   SiRedis,
   SiNodedotjs,
-  SiBun,
-  SiDeno,
 ];
 
 export const SkillsIcons = SkillsFCs.map((Icon) => (
