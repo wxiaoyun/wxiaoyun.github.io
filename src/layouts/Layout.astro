@@ -4,6 +4,7 @@ import Header from "@/components/Header.astro";
 import { Separator } from "@/components/ui/separator";
 import "@/index.css";
 import { AstroFont } from "astro-font";
+import { GoogleAnalytics } from 'astro-google-analytics';
 import { ViewTransitions } from "astro:transitions";
 
 export type LayoutProps = {
@@ -11,6 +12,7 @@ export type LayoutProps = {
 };
 
 const { title = "Wu Xiaoyun" } = Astro.props as LayoutProps;
+const googleAnalyticsMeasurementId = import.meta.env.GOOGLE_ANALYTICS_MEASUREMENT_ID as string;
 ---
 
 <!doctype html>
@@ -35,6 +37,7 @@ const { title = "Wu Xiaoyun" } = Astro.props as LayoutProps;
         },
       ]}
     />
+    <GoogleAnalytics id={googleAnalyticsMeasurementId} />
     <ViewTransitions />
   </head>
   <body class="antialiased bg-gray-50">
