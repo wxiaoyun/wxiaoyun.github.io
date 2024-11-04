@@ -20,6 +20,7 @@ const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
     <a href={`/blog/${entry.slug}`} aria-label={item.description}>
       <h4
         class="scroll-m-20 text-md font-semibold tracking-tight hover:underline"
+        transition:name={`blog-${entry.slug}`}
       >
         {item.title}
       </h4>

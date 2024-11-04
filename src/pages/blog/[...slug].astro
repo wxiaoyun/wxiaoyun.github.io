@@ -34,10 +34,11 @@ const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
   </time>
 
   <article class="prose-slate prose sm:prose-lg w-full">
+    <h1 transition:name={`blog-${entry.slug}`}>{item.title}</h1>
     <Content />
   </article>
 
-  <a href="/blog" class="text-neutral-500 hover:underline mx-auto">
+  <a href="/blog" class="text-muted-foreground hover:underline mx-auto">
     Click to read more blogs
   </a>
 </Layout>
