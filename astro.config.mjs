@@ -10,7 +10,7 @@ import remarkToc from "remark-toc";
 export default defineConfig({
   prefetch: true,
   output: "static",
-  site: "https://wxiaoyun.github.io",
+  site: "https://wxiaoyun.com/",
   markdown: {
     gfm: true,
     shikiConfig: {

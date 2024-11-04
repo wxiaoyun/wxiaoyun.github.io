@@ -32,9 +32,6 @@ importers:
       astro-font:
         specifier: ^0.1.81
         version: 0.1.81
-      astro-google-analytics:
-        specifier: ^1.0.3
-        version: 1.0.3
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -1124,9 +1121,6 @@ packages:
 
   astro-font@0.1.81:
     resolution: {integrity: sha512-rbrv/+ZSYdgyjBlhkAqfCjMxqqo6iEwnSo/rAdDt/POILsF0ChxMFhefIIzKEukrRGtVjEj1lrLRYk+AdV9scQ==}
-
-  astro-google-analytics@1.0.3:
-    resolution: {integrity: sha512-5bD7jA15yxVaUFVVEFG6KKMphYJ4AKP4+HSqCVBpTBnqh8LL0giTdAHpG9KJs3JaFbGQUTWP5Pqt8+twz7f55Q==}
 
   astro@4.16.8:
     resolution: {integrity: sha512-BRWFP0UQ8gkOr90KQW7oooedtgCk/j91pyv1WQUmgZwMUZk/v0HJRiddAZgvGCECOnmZFc9ZqRZnBsAMUgApNQ==}
@@ -4212,8 +4206,6 @@ snapshots:
       - typescript
 
   astro-font@0.1.81: {}
-
-  astro-google-analytics@1.0.3: {}
 
   astro@4.16.8(@types/node@22.8.6)(rollup@4.24.3)(typescript@5.6.3):
     dependencies:
