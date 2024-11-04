@@ -13,7 +13,6 @@ export type LayoutProps = {
 };
 
 const { title = "Wu Xiaoyun" } = Astro.props as LayoutProps;
-const googleAnalyticsMeasurementId = "G-BZNH6BHHQC";
 ---
 
 <!doctype html>
@@ -38,7 +37,7 @@ const googleAnalyticsMeasurementId = "G-BZNH6BHHQC";
         },
       ]}
     />
-    <GoogleAnalytics id={googleAnalyticsMeasurementId} />
+    <GoogleAnalytics />
     <ViewTransitions />
   </head>
   <body class="antialiased bg-gray-50">

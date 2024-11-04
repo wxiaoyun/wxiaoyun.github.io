@@ -1,16 +1,16 @@
 ---
-export type GoogleAnalyticsProps = {
-  id: string;
-};
-
-const { id } = Astro.props as GoogleAnalyticsProps;
+const googleAnalyticsMeasurementId = "G-BZNH6BHHQC";
 ---
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsMeasurementId}`}
+></script>
 <script>
   // @ts-nocheck
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-  gtag('config', 'G-BZNH6BHHQC');
+  gtag("config", "G-BZNH6BHHQC");
 </script>
