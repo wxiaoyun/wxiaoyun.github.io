@@ -56,6 +56,10 @@ const socialLinkProps: LinkIconProps[] = [
     className: socialLinkClassName,
   },
 ];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === "/" ? href === currentPath : currentPath.startsWith(href);
 ---
 
 <header
@@ -68,13 +72,21 @@ const socialLinkProps: LinkIconProps[] = [
       navItemProps.map((props) => (
         <a
           href={props.href}
-          class="relative px-2 sm:px-3"
+          class="relative px-2 sm:px-3 group"
           data-astro-prefetch="load"
           download={props.download}
         >
-          <span class="text-md text-muted-foreground hover:text-foreground transition-colors duration-300">
+          <span class="text-md text-muted-foreground group-hover:text-foreground transition-colors duration-300">
             {props.title}
           </span>
+          {isActive(props.href) ? (
+            <div
+              transition:name="nav-underline"
+              class="border-b-2 group-hover:border-muted-foreground transition-colors"
+            />
+          ) : (
+            <div class="border-b-2 border-transparent" />
+          )}
         </a>
       ))
     }
