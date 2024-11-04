@@ -1,11 +1,12 @@
 ---
 import Footer from "@/components/Footer.astro";
+import GoogleAnalytics from "@/components/GoogleAnalytics.astro";
 import Header from "@/components/Header.astro";
 import { Separator } from "@/components/ui/separator";
 import "@/index.css";
 import { AstroFont } from "astro-font";
-import { GoogleAnalytics } from "astro-google-analytics";
 import { ViewTransitions } from "astro:transitions";
+import favicon from "../assets/favicon.ico";
 
 export type LayoutProps = {
   title: string;
@@ -21,7 +22,7 @@ const googleAnalyticsMeasurementId = "G-BZNH6BHHQC";
     <meta charset="UTF-8" />
     <meta name="description" content="Wu Xiaoyun's portfolio page" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href={favicon} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <AstroFont

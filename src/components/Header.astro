@@ -24,6 +24,7 @@ const navItemProps = [
   {
     title: "Resume",
     href: "/wu_xiaoyun_resume.pdf",
+    download: "wu_xiaoyun_resume.pdf",
   },
 ];
 
@@ -69,6 +70,7 @@ const socialLinkProps: LinkIconProps[] = [
           href={props.href}
           class="relative px-2 sm:px-3"
           data-astro-prefetch="load"
+          download={props.download}
         >
           <span class="text-md text-muted-foreground hover:text-foreground transition-colors duration-300">
             {props.title}
