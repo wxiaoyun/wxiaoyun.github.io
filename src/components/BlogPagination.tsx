@@ -23,12 +23,12 @@ export const BlogPagination: Component<BlogPaginationProps> = (props) => {
       count={props.blogEntries.length}
       page={props.index + 1}
       itemComponent={(itemProps) => (
-        <PaginationItem page={itemProps.page}>
+        <a href={`/blog/${props.blogEntries[itemProps.page - 1].slug}`}>
           {/* Page is 1 indexed */}
-          <a href={`/blog/${props.blogEntries[itemProps.page - 1].slug}`}>
+          <PaginationItem page={itemProps.page}>
             {itemProps.page}
-          </a>
-        </PaginationItem>
+          </PaginationItem>
+        </a>
       )}
       ellipsisComponent={() => <PaginationEllipsis />}
     >
