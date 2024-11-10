@@ -1,21 +1,31 @@
 ---
+import { BlogPagination } from "@/components/BlogPagination";
 import Layout from "@/layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
+const blogEntries = await getCollection("blog");
+blogEntries.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
-  return blogEntries.map((entry) => ({
+  blogEntries.sort(
+    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+  );
+  return blogEntries.map((entry, i) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: {
+      entry,
+      index: i,
+    },
   }));
 }
 
 export type BlogPostProps = {
   entry: CollectionEntry<"blog">;
+  index: number;
 };
 
-const { entry } = Astro.props as BlogPostProps;
+const { entry, index } = Astro.props as BlogPostProps;
 const { Content } = await entry.render();
 const item = entry.data;
 const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
@@ -38,7 +48,9 @@ const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
     <Content />
   </article>
 
-  <a href="/blog" class="text-muted-foreground hover:underline mx-auto">
-    Click to read more blogs
-  </a>
+  <BlogPagination
+    index={index}
+    blogEntries={blogEntries}
+    transition:name="blog-pagination"
+  />
 </Layout>
