@@ -19,7 +19,6 @@
     "@astrojs/solid-js": "^4.4.2",
     "@astrojs/tailwind": "^5.1.2",
     "@kobalte/core": "^0.13.7",
-    "@solidjs/router": "^0.15.0",
     "astro": "^4.16.8",
     "astro-font": "^0.1.81",
     "class-variance-authority": "^0.7.0",

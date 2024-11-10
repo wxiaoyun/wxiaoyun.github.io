@@ -11,6 +11,9 @@ export default defineConfig({
   prefetch: true,
   output: "static",
   site: "https://wxiaoyun.com/",
+  image: {
+    domains: ["miro.medium.com"]
+  },
   markdown: {
     gfm: true,
     shikiConfig: {

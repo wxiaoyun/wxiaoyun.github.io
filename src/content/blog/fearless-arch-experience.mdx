@@ -1,0 +1,120 @@
+---
+title: "Fearless Arch Experience: A Guide To Automatic System Backups"
+pubDate: "2024-11-10 08:53:56"
+link: "https://medium.com/p/6f6f00509a0a"
+thumbnail: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*tCvTXVkWKMzF_uWXsk6XNQ.png"
+description: "A simple guide to creating automatic system backups on Arch Linux."
+preview: "One of the most notorious aspects of daily driving Arch Linux is the fear of breaking your system."
+categories: ["linux", "arch-linux", "backup", "rsync"]
+---
+
+import archLinux from "@/assets/arch-linux.svg";
+import timeshiftSettings from "@/assets/timeshift-settings.png";
+import { Image } from "astro:assets";
+
+_A simple guide to creating automatic system backups on Arch Linux._
+
+<Image src={archLinux} alt="Arch Linux logo"/>
+
+One of the most notorious aspects of daily driving Arch Linux is the fear of breaking your system. The fear of losing all your configurations, themes, and scripts is a nightmare for any ricer. However, I am here to tell you that with the help of `rsync` and `timeshift`, or any other backup tool, you can easily create a backup of your system and restore it in case of a disaster. In fact, I recently had a system crash and was able to restore my system back to its previous state without any data loss. In this blog, I will guide you through the process of creating an automatic setup to backup your system using `timeshift`.
+
+## Automatic System Backups Setup
+
+### Step 1: Installation of `timeshift`
+
+Install `timeshift` using the following command or using the pacman helper of your choice:
+
+```bash
+sudo pacman -S timeshift
+```
+
+To verify the installation, run the following command:
+
+```bash
+sudo timeshift --version
+```
+
+### Step 2: Periodic Backups
+
+You can choose to use any GUI tool or the command line to create backups.
+
+#### Using GUI Tools
+
+If you use the timeshift GUI tool, you can easily configure the backup settings and configure the backup location and backup schedule.
+
+<Image src={timeshiftSettings} alt="Screenshot of timeshift settings" />
+
+<small>
+  _For more details, visit the Arch Linux Wiki on
+  [Timeshift](https://wiki.archlinux.org/title/Timeshift)._
+</small>
+
+### Step 3: Adding Pacman Hooks
+
+To ensure that your system is backed up before any system upgrade, you can add a `pacman` hook. Create a new file in `/etc/pacman.d/hooks/backup.hook` and add the following script:
+
+```hook
+# https://man.archlinux.org/man/alpm-hooks.5
+
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = pre-upgrade rsync backup
+Depends = timeshift
+When = PreTransaction
+Exec = /bin/sh -c "/etc/pacman.d/hooks.bin/backup.sh"
+AbortOnFail
+```
+
+Create a new file in `/etc/pacman.d/hooks.bin/backup.sh` and add the following script:
+
+```bash
+#!/bin/bash
+# Path to backup folder. Usually in the form of <path>/timeshift/snapshots-ondemand
+find "path/to/backup" -mmin -10 | grep $(date +%Y-%m-%d)
+if [ $? -eq 0 ]; then
+    echo "timeshift backup canceled, time threshold not met"
+else
+    sudo /usr/bin/timeshift --create --comments "timeshift-pacman-hook-snapshot"
+fi
+exit
+
+```
+
+This script will create a backup before any system upgrade if a backup was not created in the last 10 minutes.
+
+## System Recovery
+
+In case of a system crash, you can easily restore your system using the backup created. To restore your system, boot into a live USB and mount the root partition to /mnt, boot partition to /mnt/boot, and the backup partition to a folder of your choice. Then run the following command:
+
+Delete all files from /mnt/boot
+
+```bash
+rm -rf /mnt/boot/*
+```
+
+Restore the backup
+
+```bash
+# Use the path to the previous backup, usually in the form of <path>/timeshift/shnapshots/2022-09-15_18-00-01
+path_to_previous_backup="/path/to/previous_backup"
+rsync -avxPAX --exclude="lost+found" "$path_to_previous_backup/localhost/boot" /mnt/boot
+```
+
+Move the files into /mnt/boot
+
+```bash
+mv /mnt/boot/boot/* /mnt/boot
+rm -rf /mnt/boot/boot
+```
+
+Great, you have successfully restored your system. Now reboot your system and you should be good to go.
+
+<small>
+  _Original post by [
+  archforthewin](https://bbs.archlinux.org/profile.php?id=137560) on the [Arch
+  Linux Forums](https://bbs.archlinux.org/viewtopic.php?id=279816)._
+</small>
