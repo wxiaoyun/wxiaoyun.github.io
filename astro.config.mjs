@@ -12,7 +12,7 @@ export default defineConfig({
   output: "static",
   site: "https://wxiaoyun.com/",
   image: {
-    domains: ["miro.medium.com"]
+    domains: ["miro.medium.com"],
   },
   markdown: {
     gfm: true,
