@@ -5,7 +5,8 @@ link: ""
 thumbnail: ""
 description: "How to achieve exhaustive compile time matching in Typescript, just like in Rust."
 preview: "When working with union types in TypeScript, it's easy to miss out on handling every possible case. "
-categories: ["typescript", "rust", "pattern-matching", "type-safety", "compile-time"]
+categories:
+  ["typescript", "rust", "pattern-matching", "type-safety", "compile-time"]
 ---
 
 When working with union types in TypeScript, it's easy to miss out on handling every possible case. Say you have a union type with specific values, and you create a function to handle each case in a switch statement. TypeScript, as helpful as it is, won’t alert you if you forget to account for one of the union members. This non-exhaustive matching can slip through and cause runtime bugs. This is a headache no developer wants.
