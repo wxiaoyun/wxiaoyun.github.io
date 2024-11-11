@@ -1,0 +1,133 @@
+---
+title: "Exhaustive Compile Time Matching in Typescript, Just Like in Rust"
+pubDate: "2024-11-11 10:46:31"
+link: ""
+thumbnail: ""
+description: "How to achieve exhaustive compile time matching in Typescript, just like in Rust."
+preview: "When working with union types in TypeScript, it's easy to miss out on handling every possible case. "
+categories: ["typescript", "rust", "pattern-matching", "type-safety", "compile-time"]
+---
+
+When working with union types in TypeScript, it's easy to miss out on handling every possible case. Say you have a union type with specific values, and you create a function to handle each case in a switch statement. TypeScript, as helpful as it is, won’t alert you if you forget to account for one of the union members. This non-exhaustive matching can slip through and cause runtime bugs. This is a headache no developer wants.
+
+```typescript
+type SomeUnionType = "a" | "b" | "c";
+
+function doSomethingWithEnum(x: SomeUnionType) {
+  switch (x) {
+    case "a":
+      console.log("A");
+      break;
+    case "b":
+      console.log("B");
+      break;
+  }
+}
+
+doSomethingWithEnum("a");
+```
+
+If you try to compile this code, the Typescript compiler will not give you any error. This is because the Typescript compiler does not enforce exhaustive matching. This means that you can forget to handle some cases in a switch statement, and the compiler will not warn you about it.
+
+```bash
+code/demo on  master [?] is 󰏗 v0.1.0 via 🦀 v1.79.0 took 1s
+>  npx tsc src/main.ts # No error
+```
+
+In contrast, Rust has a stricter approach. Its compiler insists on exhaustive matching, requiring that all cases be covered in a match statement. If even one variant of an enum is missing, Rust flags it as an error and provides an informative error message pointing to the exact case that wasn't handled. This feature is beloved by Rust developers because it helps catch potential bugs at compile time rather than runtime.
+
+```rust
+enum SomeEnum {
+  VariantA,
+  VariantB,
+  VariantC
+}
+
+fn do_something_with_enum(x: SomeEnum) {
+  match x {
+    SomeEnum::VariantA => println!("Variant A"),
+    SomeEnum::VariantB => println!("Variant B"),
+  }
+}
+
+fn main() {
+  let x = SomeEnum::VariantA;
+  do_something_with_enum(x);
+}
+```
+
+If you try to compile this code, the Rust compiler will give you an error:
+
+```bash
+code/demo on  master [?] is 󰏗 v0.1.0 via 🦀 v1.79.0 took 165ms
+>  cargo build
+   Compiling demo v0.1.0 (/home/wuxiaoyun/code/demo)
+error[E0004]: non-exhaustive patterns: `SomeEnum::VariantC` not covered
+ --> src/main.rs:8:9
+  |
+8 |   match x {
+  |         ^ pattern `SomeEnum::VariantC` not covered
+  |
+note: `SomeEnum` defined here
+ --> src/main.rs:1:6
+  |
+1 | enum SomeEnum {
+  |      ^^^^^^^^
+...
+4 |   VariantC
+  |   -------- not covered
+  = note: the matched value is of type `SomeEnum`
+help: ensure that all possible cases are being handled by adding a match arm with a wildcard pattern or an explicit pattern as shown
+  |
+10~     SomeEnum::VariantB => println!("Variant B"),
+11~     SomeEnum::VariantC => todo!(),
+  |
+
+For more information about this error, try `rustc --explain E0004`.
+error: could not compile `demo` (bin "demo") due to 1 previous error
+```
+
+Classic informative error messages from rustc! The Rust compiler tells you that the pattern `SomeEnum::VariantC` is not covered. Let's bring that robustness into TypeScript! By creating a simple `assertNever` function, we can check for missing cases in our union type handling. In practice, if all cases aren't handled, `assertNever` will throw an error. With this function, TypeScript raises a compile-time error for any unmatched union member, forcing you to address it. It's a powerful way to improve type safety and avoid unexpected issues.
+
+```typescript
+type SomeUnionType = "a" | "b" | "c";
+
+function assertNever(x: never): never {
+  throw new Error("Unexpected object: " + x);
+}
+
+function doSomethingWithEnum(x: SomeUnionType) {
+  switch (x) {
+    case "a":
+      console.log("A");
+      break;
+    case "b":
+      console.log("B");
+      break;
+    default:
+      assertNever(x);
+  }
+}
+
+doSomethingWithEnum("a");
+```
+
+Now if we try to compile this code, the Typescript compiler will give us an error:
+
+```bash
+code/demo on  master [?] is 󰏗 v0.1.0 via 🦀 v1.79.0 took 858ms
+>  npx tsc src/main.ts
+src/main.ts:16:19 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'never'.
+
+16       assertNever(x);
+                     ~
+
+
+Found 1 error in src/main.ts:16
+```
+
+Here at the default branch, we call the `assertNever` function with the argument `x`. The `assertNever` function has a return type of `never`, which means that it will never return. This tells the Typescript compiler that the default branch is unreachable, and all possible cases should be handled. However, after the type narrowing, if we hover over the `x` variable, we can see that the type of `x` is narrowed to `"c"`, which is not `never`. And because of the type mismatch, the Typescript compiler will give us an error.
+
+With this technique, you get the best of both worlds: TypeScript's flexibility and Rust's assurance of exhaustive matching. Try it out in your TypeScript projects, and enjoy a little extra peace of mind!
+
+Happy coding!
