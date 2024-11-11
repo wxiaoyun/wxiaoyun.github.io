@@ -1,15 +1,15 @@
 ---
 title: "Exhaustive Compile Time Matching in Typescript, Just Like in Rust"
 pubDate: "2024-11-11 10:46:31"
-link: ""
+link: "https://medium.com/p/0ba453f1f816"
 thumbnail: ""
 description: "How to achieve exhaustive compile time matching in Typescript, just like in Rust."
-preview: "When working with union types in TypeScript, it's easy to miss out on handling every possible case. "
+preview: "When working with union types in Typescript, it's easy to miss out on handling every possible case. "
 categories:
-  ["typescript", "rust", "pattern-matching", "type-safety", "compile-time"]
+  ["typescript", "rust", "pattern-matching", "type-safety", "compilers"]
 ---
 
-When working with union types in TypeScript, it's easy to miss out on handling every possible case. Say you have a union type with specific values, and you create a function to handle each case in a switch statement. TypeScript, as helpful as it is, won’t alert you if you forget to account for one of the union members. This non-exhaustive matching can slip through and cause runtime bugs. This is a headache no developer wants.
+When working with union types in Typescript, it's easy to miss out on handling every possible case. Say you have a union type with specific values, and you create a function to handle each case in a switch statement. Typescript, as helpful as it is, won’t alert you if you forget to account for one of the union members. This non-exhaustive matching can slip through and cause runtime bugs. This is a headache no developer wants.
 
 ```typescript
 type SomeUnionType = "a" | "b" | "c";
@@ -88,7 +88,7 @@ For more information about this error, try `rustc --explain E0004`.
 error: could not compile `demo` (bin "demo") due to 1 previous error
 ```
 
-Classic informative error messages from rustc! The Rust compiler tells you that the pattern `SomeEnum::VariantC` is not covered. Let's bring that robustness into TypeScript! By creating a simple `assertNever` function, we can check for missing cases in our union type handling. In practice, if all cases aren't handled, `assertNever` will throw an error. With this function, TypeScript raises a compile-time error for any unmatched union member, forcing you to address it. It's a powerful way to improve type safety and avoid unexpected issues.
+Classic informative error messages from rustc! The Rust compiler tells you that the pattern `SomeEnum::VariantC` is not covered. Let's bring that robustness into Typescript! By creating a simple `assertNever` function, we can check for missing cases in our union type handling. In practice, if all cases aren't handled, `assertNever` will throw an error. With this function, Typescript raises a compile-time error for any unmatched union member, forcing you to address it. It's a powerful way to improve type safety and avoid unexpected issues.
 
 ```typescript
 type SomeUnionType = "a" | "b" | "c";
@@ -129,6 +129,6 @@ Found 1 error in src/main.ts:16
 
 Here at the default branch, we call the `assertNever` function with the argument `x`. The `assertNever` function has a return type of `never`, which means that it will never return. This tells the Typescript compiler that the default branch is unreachable, and all possible cases should be handled. However, after the type narrowing, if we hover over the `x` variable, we can see that the type of `x` is narrowed to `"c"`, which is not `never`. And because of the type mismatch, the Typescript compiler will give us an error.
 
-With this technique, you get the best of both worlds: TypeScript's flexibility and Rust's assurance of exhaustive matching. Try it out in your TypeScript projects, and enjoy a little extra peace of mind!
+With this technique, you get the best of both worlds: Typescript's flexibility and Rust's assurance of exhaustive matching. Try it out in your Typescript projects, and enjoy a little extra peace of mind!
 
 Happy coding!
