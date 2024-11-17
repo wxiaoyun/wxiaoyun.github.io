@@ -41,34 +41,36 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={item.title}>
-  <main class="flex flex-col gap-6">
-    <time
-      datetime={item.pubDate.toISOString()}
-      class="text-sm text-neutral-500 ml-auto"
-    >
-      {`Posted on ${pubDate}`}
-    </time>
+  <time
+    datetime={item.pubDate.toISOString()}
+    class="text-sm text-neutral-500 ml-auto"
+  >
+    {`Posted on ${pubDate}`}
+  </time>
 
-    <article class="prose-slate prose sm:prose-lg w-full">
-      <h1 transition:name={`blog-${entry.slug}`}>{item.title}</h1>
-      <Content />
-    </article>
+  <article class="prose-slate prose sm:prose-lg w-full">
+    <h1 transition:name={`blog-${entry.slug}-top`}>{item.title}</h1>
+    <Content />
+  </article>
 
-    <BlogPagination
-      index={index}
-      blogEntries={blogEntries}
-      transition:name="blog-pagination"
-    />
+  <BlogPagination
+    index={index}
+    blogEntries={blogEntries}
+    transition:name="blog-pagination"
+  />
 
-    <Separator />
+  <Separator />
 
-    <section>
-      <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
-        More blogs from me
-      </h4>
-      <div class="mt-6 flex flex-col gap-3">
-        {otherEntries.map((entry) => <MediumArticle entry={entry} />)}
-      </div>
-    </section>
-  </main>
+  <section>
+    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
+      More blogs from me
+    </h4>
+    <div class="mt-6 flex flex-col gap-3">
+      {
+        otherEntries.map((entry) => (
+          <MediumArticle entry={entry} isTop={false} />
+        ))
+      }
+    </div>
+  </section>
 </Layout>

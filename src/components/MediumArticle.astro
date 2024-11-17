@@ -3,9 +3,10 @@ import type { CollectionEntry } from "astro:content";
 
 export type BlogPostProps = {
   entry: CollectionEntry<"blog">;
+  isTop?: boolean;
 };
 
-const { entry } = Astro.props as BlogPostProps;
+const { entry, isTop = true } = Astro.props as BlogPostProps;
 
 const item = entry.data;
 const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
@@ -20,7 +21,7 @@ const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
     <a href={`/blog/${entry.slug}`} aria-label={item.description}>
       <h4
         class="scroll-m-20 text-md font-semibold tracking-tight hover:underline"
-        transition:name={`blog-${entry.slug}`}
+        transition:name={`blog-${entry.slug}-${isTop ? "top" : "other"}`}
       >
         {item.title}
       </h4>
@@ -32,5 +33,16 @@ const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
       {pubDate}
     </time>
   </div>
-  <p class="text-sm text-muted-foreground truncate">{item.preview}</p>
+  <ul class="flex justify-between items-center">
+    <p class="text-sm text-muted-foreground truncate">{item.preview}</p>
+    <ul class="flex gap-1">
+      {
+        item.categories.map((category) => (
+          <li class="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded-s-full rounded-e-full text-nowrap shadow-sm">
+            {category}
+          </li>
+        ))
+      }
+    </ul>
+  </ul>
 </article>

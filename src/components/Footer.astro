@@ -21,13 +21,13 @@ const techStack: LinkIconProps[] = [
 ];
 ---
 
-<footer class="w-full flex flex-col items-center gap-3">
+<footer class="w-full flex flex-col gap-2">
   <small class="text-xs text-muted-foreground">
     {`Copyright (c) ${year} Wu Xiaoyun. All rights reserved.`}
   </small>
 
-  <div class="text-sm text-muted-foreground flex gap-2 items-center">
-    <span>About this website: built with</span>
+  <div class="text-xs text-muted-foreground flex gap-2 items-center">
+    <span>Website built with</span>
     {techStack.map((t) => <LinkIcon {...t} />)}
   </div>
 </footer>

@@ -11,37 +11,33 @@ const selfIntro =
 ---
 
 <Layout title="Wu Xiaoyun - Home">
-  <main class="flex flex-col gap-12 py-6">
-    <section>
-      <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
-        About me
-      </h3>
-      <p class="scroll-m-20 text-lg font-semibold tracking-tight">
-        {selfIntro}
-      </p>
-    </section>
-    <Separator />
-    <section class="w-full">
-      <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
-        Tools and Technologies
-      </h3>
-      <SkillGrid
-        client:load
-        skills={SkillsIcons}
-        rowSize={6}
-        rowsDelay={150}
-        class="mt-6 flex flex-col gap-6"
-      />
-    </section>
-    <Separator />
-    <section>
-      <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
-        My Interests
-      </h3>
+  <section>
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">About me</h3>
+    <p class="scroll-m-20 text-lg font-semibold tracking-tight">
+      {selfIntro}
+    </p>
+  </section>
+  <Separator />
+  <section class="w-full">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+      Tools and Technologies
+    </h3>
+    <SkillGrid
+      client:load
+      skills={SkillsIcons}
+      rowSize={6}
+      rowsDelay={150}
+      class="mt-6 flex flex-col gap-6"
+    />
+  </section>
+  <Separator />
+  <section>
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+      My Interests
+    </h3>
 
-      <BentoGrid class="mt-6">
-        {interests.map((int) => <BentoGridItem {...int} />)}
-      </BentoGrid>
-    </section>
-  </main>
+    <BentoGrid class="mt-6">
+      {interests.map((int) => <BentoGridItem {...int} />)}
+    </BentoGrid>
+  </section>
 </Layout>
