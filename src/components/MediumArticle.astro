@@ -33,7 +33,8 @@ const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
       {pubDate}
     </time>
   </div>
-  <ul class="flex justify-between items-center">
+  
+  <div class="flex justify-between items-center">
     <p class="text-sm text-muted-foreground truncate">{item.preview}</p>
     <ul class="flex gap-1">
       {
@@ -44,5 +45,5 @@ const pubDate = new Date(item.pubDate).toLocaleDateString("en-US", {
         ))
       }
     </ul>
-  </ul>
+  </div>
 </article>
